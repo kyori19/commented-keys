@@ -1,5 +1,3 @@
-import {NextPage} from "next";
-
-const Page: NextPage = () => null;
+const Page = () => null;
 
 export default Page;

@@ -4,7 +4,7 @@ import {queryString} from "./queryString";
 
 const FetchKeys: NextApiHandler = async (req, res) => {
     const domain = req.headers.host!;
-    const userName = queryString(req.query.username);
+    const userName = queryString(req.query.username || '');
 
     if (!/^[a-zA-Z0-9]+$/.test(userName)) {
         return res.status(400).send(joinMessage(domain, invalidUserNameError(userName)));
