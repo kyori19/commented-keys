@@ -1,22 +1,15 @@
 import './global.css';
-import {ReactNode} from "react";
-import {JetBrains_Mono} from "@next/font/google";
+import GlobalStyle from "./GlobalStyle";
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'] });
+import type {ReactNode} from "react";
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({children}: { children: ReactNode }) {
     return (
         <html>
-        <head>
-            <style>
-                {`
-                    html, pre {
-                        font-family: ${jetBrainsMono.style.fontFamily}, monospace;
-                    }
-                `}
-            </style>
-        </head>
-        <body>{children}</body>
+        <body>
+        <GlobalStyle/>
+        {children}
+        </body>
         </html>
     )
 }
